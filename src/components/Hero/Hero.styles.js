@@ -1,4 +1,3 @@
-// src/components/Hero/Hero.styles.js
 import styled from 'styled-components';
 export const colors = {
   primary: '#00B2D4',
@@ -10,7 +9,6 @@ export const colors = {
   border: '#D9D9D9'
 };
 
-// — Hero styles —
 
 export const Section = styled.section`
   padding: 0 1rem;
@@ -60,7 +58,6 @@ export const Badge = styled.div`
 `;
 
 export const Title = styled.h1`
-  font-family: 'Montserrat', sans-serif;
   font-size: 2.5rem;
   font-weight: 600;
   color: ${colors.textDark};
@@ -73,7 +70,6 @@ export const Title = styled.h1`
 `;
 
 export const Subtitle = styled.p`
-  font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   color: ${colors.textLight};
   margin-bottom: 2.5rem;
@@ -83,7 +79,6 @@ export const CardWrapper = styled.div`
   background: ${colors.bgLight};
   border-radius: 16px;
   overflow: hidden;
-  font-family: 'Montserrat', sans-serif;
 `;
 
 export const CardHeader = styled.div`
@@ -111,8 +106,6 @@ export const PriceBlock = styled.div`
 
 export const SubtitleBlock = styled.div`
   background: ${colors.cardSub};
-  color: #fff;
-  text-align: center;
   padding: 1rem;
 `;
 
@@ -203,15 +196,10 @@ export const CriticalList = styled.ul`
   }
 `;
 
-// — FormHero styles —
 
 export const FormWrapper = styled.div`
-  background: ${colors.bgLight};
   border-radius: 16px;
-  padding: 2rem;
-  font-family: 'Montserrat', sans-serif;
   margin-top: 0;
-
   @media (max-width: 992px) {
     padding: 1.5rem;
   }

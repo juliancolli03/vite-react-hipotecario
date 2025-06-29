@@ -1,4 +1,3 @@
-import React from 'react';
 import { DropdownMenuStyled, DropdownArrow, SubmenuItem } from './Header.styles';
 
 const DropdownMenu = ({ submenu }) => (

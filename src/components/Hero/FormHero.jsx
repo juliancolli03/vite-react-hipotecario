@@ -20,10 +20,10 @@ export default function FormHero() {
   };
 
   return (
-    <FormWrapper>
+    <FormWrapper className='bg-light rounded-4 p-4'>
       <FormTitle>Simulá tu seguro de salud integral</FormTitle>
 
-      <FormGroup>
+      <FormGroup className='d-flex flex-wrap'>
         <FieldWrapper>
           <Label htmlFor="nombre">Nombre *</Label>
           <Input

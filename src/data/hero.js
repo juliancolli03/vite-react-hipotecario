@@ -1,4 +1,3 @@
-// src/data/hero.js
 export const heroData = {
   badgeText: '¡Nueva protección!',
   saludText: 'Salud Integral',

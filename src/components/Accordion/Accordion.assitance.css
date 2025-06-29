@@ -1,0 +1,9 @@
+
+.assistance-accordion .accordion-button::after {
+  display: none;
+}
+
+.assistance-accordion .toggle-text {
+  display: inline-flex;
+}
+

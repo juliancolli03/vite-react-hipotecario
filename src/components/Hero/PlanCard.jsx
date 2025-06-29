@@ -30,7 +30,7 @@ export default function PlanCard() {
           {priceDay} <small>/ día</small>
         </div>
       </PriceBlock>
-      <SubtitleBlock>Ideal para acompañar tu obra social ó prepaga</SubtitleBlock>
+      <SubtitleBlock className='text-white text-center'>Ideal para acompañar tu obra social ó prepaga</SubtitleBlock>
       <FeatureList>
         {features.map(f => (
           <li key={f}>
