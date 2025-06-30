@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Section = styled.section`
-  background: var(--color-bg-light);
+  background: var(--color-bg-extra-assistance);
   padding: 4rem 1rem;
   text-align: center;
   font-family: 'Montserrat', sans-serif;
@@ -20,7 +20,7 @@ export const Title = styled.h2`
 `;
 
 export const Subtitle = styled.p`
-  color: var(--color-primary);
+  color: var(--color-text-dark);
   font-size: 1rem;
   margin-bottom: 2.5rem;
 `;

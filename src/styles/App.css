@@ -8,9 +8,10 @@
   --color-bg-light: #F7F7F7;
   --color-border: #D9D9D9;
   --color-success: #8DC63F;
-    --color-highlight-light: #88d0ea;
-      --color-bg-extra: #E6F7FB;
-
+  --color-highlight-light: #88d0ea;
+  --color-bg-extra: #E6F7FB;
+  --color-card-sub-new: rgb(3, 178, 207);
+  --color-bg-extra-assistance: #EDF8FC;
 }
 
 * {

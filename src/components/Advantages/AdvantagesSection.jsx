@@ -50,6 +50,8 @@ export default function AdvantagesSection() {
             />
           ))}
         </Grid>
+        <Title>¿Qué me cubre la asistencia del seguro de salud?</Title>
+                  <p>¿Te quedaron preguntas sobre el seguro de salud?</p>
 
         <Accordion
           items={items}

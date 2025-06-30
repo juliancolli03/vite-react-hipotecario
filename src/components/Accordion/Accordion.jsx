@@ -53,8 +53,6 @@ export default function Accordion({
             >
               <span className="header-content">{header}</span>
               <span className="ms-auto d-flex align-items-center toggle-text">
-                <span className="toggle-open">Ver más</span>
-                <span className="toggle-close d-none">Ver menos</span>
               </span>
             </button>
           </h2>

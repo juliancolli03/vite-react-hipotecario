@@ -1,8 +1,10 @@
+// src/components/Assistance/Assistance.styles.js
 import styled from 'styled-components';
 
 export const Section = styled.section`
   padding: 0 1rem;
   margin-bottom: 3rem;
+
   .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -18,8 +20,9 @@ export const HighlightsRow = styled.div`
     flex-direction: column;
   }
 `;
-
-export const HighlightCard = styled.div`
+export const HighlightCard = styled.div.withConfig({
+  shouldForwardProp: prop => !['bgColor', 'textColor'].includes(prop)
+})`
   flex: 1;
   background-color: ${({ bgColor }) => bgColor};
   color: ${({ textColor }) => textColor};
@@ -38,36 +41,34 @@ export const HighlightCard = styled.div`
     height: 48px;
   }
 
-  .highlight-text {
+  .highlight-content {
     flex: 1;
 
-    h3 {
-      font-size: 1.75rem;
+    h4 {
+      font-size: 1.1rem;
       font-weight: 600;
-      margin: 0 0 0.75rem;
-      line-height: 1.2;
+      margin: 0 0 0.5rem;
+    }
+
+    p {
+      margin: 0;
+      font-size: 0.9rem;
+      line-height: 1.3;
     }
 
     ul {
-      margin: 0 0 0.75rem;
-      padding-left: 0;
-      list-style-type: none;
+      list-style: none;
+      padding: 0;
 
       li {
         margin: 0.3rem 0;
         font-size: 1rem;
       }
     }
-
-    p {
-      margin: 0;
-      font-size: 1rem;
-    }
   }
 `;
-
 export const ServicesContainer = styled.div`
-  background-color: var(--color-card-sub); /* o '#00B2D4' */
+  background-color: var(--color-card-sub-new); /* o '#00B2D4' */
   border-radius: 16px;
   padding: 2rem 1rem;
   color: #fff;
@@ -99,7 +100,6 @@ export const ServiceGrid = styled.div`
   }
 `;
 
-/* Nuevo styled-component para cada ítem de servicio */
 export const ServiceItem = styled.div`
   display: flex;
   align-items: flex-start;
@@ -123,5 +123,32 @@ export const ServiceItem = styled.div`
       line-height: 1.4;
       color: #fff;
     }
+  }
+`;
+
+/* Aquí integramos el estilo de tu tarjeta */
+export const Card = styled.div`
+  border-radius: 16px;
+  padding: 1.5rem;
+  text-align: center;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+
+  img {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 1rem;
+  }
+
+  h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem;
+  }
+
+  p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.3;
   }
 `;

@@ -19,6 +19,7 @@ export const Title = styled.h2`
   font-weight: 600;
   color: var(--color-text-dark);
   margin-bottom: 2rem;
+  margin-top:5rem;
 `;
 
 /* Grid de las tarjetas */

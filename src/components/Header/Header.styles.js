@@ -79,7 +79,9 @@ export const NavItemStyled = styled.li`
   }
 `;
 
-export const NavLinkStyled = styled.a`
+export const NavLinkStyled = styled.a.withConfig({
+  shouldForwardProp: prop => !['isButton', 'outlined'].includes(prop)
+})`
   display: inline-flex;
   align-items: center;
   text-decoration: none;

@@ -163,7 +163,9 @@ export const Tooltip = styled.div`
   z-index: 10;
 `;
 
-export const CriticalList = styled.ul`
+export const CriticalList = styled.ul.withConfig({
+  shouldForwardProp: prop => prop !== 'footerLabel'
+})`
   list-style: none;
   padding: 0 1rem 1rem;
   margin: 0;
@@ -188,14 +190,10 @@ export const CriticalList = styled.ul`
     span {
       display: flex;
       align-items: center;
-    }
-
-    strong {
-      font-weight: 600;
+      gap: 0.25rem;
     }
   }
 `;
-
 
 export const FormWrapper = styled.div`
   border-radius: 16px;
@@ -203,6 +201,7 @@ export const FormWrapper = styled.div`
   @media (max-width: 992px) {
     padding: 1.5rem;
   }
+    background-color:${colors.bgLight}!important;
 `;
 
 export const FormTitle = styled.div`
