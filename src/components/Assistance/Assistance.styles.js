@@ -98,3 +98,30 @@ export const ServiceGrid = styled.div`
     grid-template-columns: 1fr;
   }
 `;
+
+/* Nuevo styled-component para cada ítem de servicio */
+export const ServiceItem = styled.div`
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  text-align: left;
+
+  img {
+    flex-shrink: 0;
+  }
+
+  .text {
+    h4 {
+      margin: 0 0 0.25rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #fff;
+    }
+    p {
+      margin: 0;
+      font-size: 0.9rem;
+      line-height: 1.4;
+      color: #fff;
+    }
+  }
+`;

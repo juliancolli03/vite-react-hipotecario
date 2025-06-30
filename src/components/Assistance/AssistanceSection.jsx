@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   Section,
   HighlightsRow,
@@ -9,7 +8,6 @@ import {
   ServiceGrid
 } from './Assistance.styles';
 import { highlights, services } from '../../data/assistance';
-import AssistanceCard from './AssistanceCard';
 import AssistanceItem from './AssistanceItem'
 export default function AssistanceSection() {
   return (

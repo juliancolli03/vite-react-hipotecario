@@ -1,4 +1,3 @@
-import React from 'react';
 import { NavItemStyled, NavLinkStyled } from './Header.styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {

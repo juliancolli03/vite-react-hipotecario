@@ -1,7 +1,6 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import './Accordion.css';
-import './Accordion.questions.css';
+import { StyledAccordion } from './Accordion.styles';
 
 export default function Accordion({
   items,
@@ -26,9 +25,11 @@ export default function Accordion({
         btn.querySelector('.toggle-open')?.classList.remove('d-none');
         btn.querySelector('.toggle-close')?.classList.add('d-none');
       };
+
       collapseEl.addEventListener('show.bs.collapse', onShow);
       collapseEl.addEventListener('hide.bs.collapse', onHide);
-      // cleanup
+
+      // cleanup for this listener
       return () => {
         collapseEl.removeEventListener('show.bs.collapse', onShow);
         collapseEl.removeEventListener('hide.bs.collapse', onHide);
@@ -37,7 +38,7 @@ export default function Accordion({
   }, [items]);
 
   return (
-    <div className={`accordion ${className}`} id={parentId}>
+    <StyledAccordion className={`accordion ${className}`} id={parentId}>
       {items.map(({ id, header, content }) => (
         <div className="accordion-item mb-3" key={id}>
           <h2 className="accordion-header" id={`heading-${id}`}>
@@ -61,13 +62,15 @@ export default function Accordion({
             id={`collapse-${id}`}
             className={`accordion-collapse collapse ${collapseClass}`}
             aria-labelledby={`heading-${id}`}
-            data-bs-parent={!allowMultiple && parentId ? `#${parentId}` : undefined}
+            data-bs-parent={
+              !allowMultiple && parentId ? `#${parentId}` : undefined
+            }
           >
             <div className="accordion-body">{content}</div>
           </div>
         </div>
       ))}
-    </div>
+    </StyledAccordion>
   );
 }
 
