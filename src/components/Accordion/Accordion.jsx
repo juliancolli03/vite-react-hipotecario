@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { StyledAccordion } from './Accordion.styles';
 
@@ -18,18 +18,20 @@ export default function Accordion({
       if (!collapseEl || !btn) return;
 
       const onShow = () => {
-        btn.querySelector('.toggle-open')?.classList.add('d-none');
-        btn.querySelector('.toggle-close')?.classList.remove('d-none');
+        const toggleText = btn.querySelector('.toggle-text');
+        if (toggleText) toggleText.textContent = 'Ver menos';
+        btn.setAttribute('aria-expanded', 'true');
       };
+
       const onHide = () => {
-        btn.querySelector('.toggle-open')?.classList.remove('d-none');
-        btn.querySelector('.toggle-close')?.classList.add('d-none');
+        const toggleText = btn.querySelector('.toggle-text');
+        if (toggleText) toggleText.textContent = 'Ver más';
+        btn.setAttribute('aria-expanded', 'false');
       };
 
       collapseEl.addEventListener('show.bs.collapse', onShow);
       collapseEl.addEventListener('hide.bs.collapse', onHide);
 
-      // cleanup for this listener
       return () => {
         collapseEl.removeEventListener('show.bs.collapse', onShow);
         collapseEl.removeEventListener('hide.bs.collapse', onHide);
@@ -52,7 +54,13 @@ export default function Accordion({
               style={headerStyle}
             >
               <span className="header-content">{header}</span>
-              <span className="ms-auto d-flex align-items-center toggle-text">
+              <span className="ms-auto d-flex align-items-center toggle-container">
+                <span className="toggle-text">Ver más</span>
+                <span className="toggle-arrow">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 6L8 10L12 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </span>
               </span>
             </button>
           </h2>
