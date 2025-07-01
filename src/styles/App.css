@@ -1,4 +1,3 @@
-
 :root {
   --color-primary: #00B2D4;
   --color-price-bg: #1D4C7A;
@@ -12,6 +11,50 @@
   --color-bg-extra: #E6F7FB;
   --color-card-sub-new: rgb(3, 178, 207);
   --color-bg-extra-assistance: #EDF8FC;
+  
+  --color-white: #fff;
+  --color-questions-bg: #f7f9fa;
+  
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  --spacing-3xl: 4rem;
+  
+  --border-radius-sm: 8px;
+  --border-radius-md: 16px;
+  --border-radius-full: 50px;
+  
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.85rem;
+  --font-size-base: 0.95rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.1rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 2rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-5xl: 2.5rem;
+  
+  --font-weight-normal: 500;
+  --font-weight-semibold: 600;
+  
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.15);
+  
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  
+  --z-tooltip: 10;
+  --z-dropdown: 5;
+  --z-header: 100;
+  
+  --container-max-width: 1200px;
+  
+
 }
 
 * {
@@ -23,5 +66,28 @@
 body {
   font-family: 'Montserrat', sans-serif;
   color: var(--color-text-dark);
-  background: #fff;
+  background: var(--color-white);
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.list-unstyled {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+button, a, input {
+  transition: var(--transition-fast);
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }

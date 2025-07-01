@@ -1,40 +1,30 @@
 import styled from 'styled-components';
-export const colors = {
-  primary: '#00B2D4',
-  priceBg: '#1D4C7A',
-  cardSub: '#2FC5E2',
-  textDark: '#005467',
-  textLight: '#555555',
-  bgLight: '#F7F7F7',
-  border: '#D9D9D9'
-};
-
 
 export const Section = styled.section`
-  padding: 0 1rem;
+  padding: 0 var(--spacing-md);
   .container {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     margin: 0 auto;
-    max-width: 1200px;
-    padding: 3rem 0;
+    max-width: var(--container-max-width);
+    padding: var(--spacing-2xl) 0;
 
     @media (max-width: 992px) {
       flex-direction: column;
-      padding: 2rem 0;
+      padding: var(--spacing-xl) 0;
     }
   }
 `;
 
 export const Left = styled.div`
-  width: 300px;
-  margin-right: 2rem;
+  width: 335px;
+  margin-right: var(--spacing-xl);
 
   @media (max-width: 992px) {
     width: 100%;
     margin-right: 0;
-    margin-bottom: 2rem;
+    margin-bottom: var(--spacing-xl);
   }
 `;
 
@@ -45,85 +35,85 @@ export const Right = styled.div`
 export const Badge = styled.div`
   display: inline-flex;
   align-items: center;
-  color: ${colors.primary};
-  font-weight: 600;
-  font-size: 0.95rem;
-  margin-bottom: 1rem;
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-base);
+  margin-bottom: var(--spacing-md);
 
   img {
     width: 24px;
     height: 24px;
-    margin-right: 0.5rem;
+    margin-right: var(--spacing-sm);
   }
 `;
 
 export const Title = styled.h1`
-  font-size: 2.5rem;
-  font-weight: 600;
-  color: ${colors.textDark};
-  margin-bottom: 1rem;
+  font-size: var(--font-size-5xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-dark);
+  margin-bottom: var(--spacing-md);
   line-height: 1.2;
 
   @media (max-width: 768px) {
-    font-size: 2rem;
+    font-size: var(--font-size-3xl);
   }
 `;
 
 export const Subtitle = styled.p`
-  font-size: 1rem;
-  color: ${colors.textLight};
-  margin-bottom: 2.5rem;
+  font-size: var(--font-size-md);
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-5xl);
 `;
 
 export const CardWrapper = styled.div`
-  background: ${colors.bgLight};
-  border-radius: 16px;
+  background: var(--color-bg-light);
+  border-radius: var(--border-radius-md);
   overflow: hidden;
 `;
 
 export const CardHeader = styled.div`
-  background: ${colors.primary};
-  color: #fff;
+  background: var(--color-primary);
+  color: var(--color-white);
   text-align: center;
-  padding: 1rem 0;
-  font-weight: 600;
+  padding: var(--spacing-md) 0;
+  font-weight: var(--font-weight-semibold);
 `;
 
 export const PriceBlock = styled.div`
-  background: ${colors.priceBg};
-  color: #fff;
+  background: var(--color-price-bg);
+  color: var(--color-white);
   text-align: center;
-  padding: 2rem 1rem;
+  padding: var(--spacing-xl) var(--spacing-md);
 
   h2 {
-    font-size: 2.5rem;
+    font-size: var(--font-size-5xl);
     margin: 0;
   }
   small {
-    font-size: 1rem;
+    font-size: var(--font-size-md);
   }
 `;
 
 export const SubtitleBlock = styled.div`
-  background: ${colors.cardSub};
-  padding: 1rem;
+  background: var(--color-card-sub);
+  padding: var(--spacing-md);
 `;
 
 export const FeatureList = styled.ul`
   list-style: none;
-  padding: 1rem;
+  padding: var(--spacing-md);
   margin: 0;
 
   li {
     display: flex;
     align-items: center;
     margin-bottom: 0.75rem;
-    font-size: 0.95rem;
-    color: ${colors.textDark};
+    font-size: var(--font-size-base);
+    color: var(--color-text-dark);
 
     svg {
-      color: #8DC63F;
-      margin-right: 0.5rem;
+      color: var(--color-success);
+      margin-right: var(--spacing-sm);
       font-size: 1.2rem;
     }
   }
@@ -132,12 +122,12 @@ export const FeatureList = styled.ul`
 export const InfoWrapper = styled.span`
   position: relative;
   display: inline-block;
-  margin-left: 0.5rem;
+  margin-left: var(--spacing-sm);
 
   svg {
-    color: ${colors.primary};
-    cursor: help;
-    font-size: 1rem;
+    color: var(--color-primary);
+    cursor: pointer;
+    font-size: var(--font-size-md);
   }
 
   &:hover > div {
@@ -148,26 +138,46 @@ export const InfoWrapper = styled.span`
 
 export const Tooltip = styled.div`
   position: absolute;
-  top: -0.5rem;
-  left: 1.5rem;
-  background: #fff;
-  padding: 0.5rem;
-  border-radius: 4px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-  font-size: 0.85rem;
-  color: ${colors.textDark};
-  width: 200px;
-  line-height: 1.2;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 160px;      
+  aspect-ratio: 1;      
+  overflow: auto;     
+
+  background: var(--color-white);
+  padding: var(--spacing-sm);
+  border-radius: var(--border-radius-sm);
+  box-shadow: var(--shadow-lg);
+
+  font-size: var(--font-size-xs);
+  line-height: 1.3;
+  color: var(--color-text-dark);
+  text-align: center;
+
   opacity: 0;
   visibility: hidden;
-  z-index: 10;
+  z-index: var(--z-tooltip);
+  transition: opacity var(--transition-fast), visibility var(--transition-fast);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px 6px 0 6px;
+    border-style: solid;
+    border-color: var(--color-white) transparent transparent transparent;
+  }
 `;
 
 export const CriticalList = styled.ul.withConfig({
   shouldForwardProp: prop => prop !== 'footerLabel'
 })`
   list-style: none;
-  padding: 0 1rem 1rem;
+  padding: 0 var(--spacing-md) var(--spacing-md);
   margin: 0;
 
   &::before {
@@ -175,47 +185,48 @@ export const CriticalList = styled.ul.withConfig({
     display: block;
     text-align: right;
     font-size: 0.9rem;
-    color: ${colors.textLight};
-    margin-bottom: 0.5rem;
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-sm);
   }
 
   li {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 0.5rem;
-    font-size: 0.95rem;
-    color: ${colors.textDark};
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-size-base);
+    color: var(--color-text-dark);
 
     span {
       display: flex;
       align-items: center;
-      gap: 0.25rem;
+      gap: var(--spacing-xs);
     }
   }
 `;
 
 export const FormWrapper = styled.div`
-  border-radius: 16px;
+  border-radius: var(--border-radius-md);
   margin-top: 0;
+  background-color: var(--color-bg-light) !important;
+  
   @media (max-width: 992px) {
-    padding: 1.5rem;
+    padding: var(--spacing-lg);
   }
-    background-color:${colors.bgLight}!important;
 `;
 
 export const FormTitle = styled.div`
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: ${colors.textDark};
-  margin-bottom: 1.5rem;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-dark);
+  margin-bottom: var(--spacing-lg);
 `;
 
 export const FormGroup = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
 
   & > div {
     flex: 1;
@@ -228,31 +239,37 @@ export const FieldWrapper = styled.div``;
 export const Label = styled.label`
   display: block;
   font-size: 0.9rem;
-  margin-bottom: 0.25rem;
-  color: ${colors.textLight};
+  margin-bottom: var(--spacing-xs);
+  color: var(--color-text-light);
 `;
 
 export const Input = styled.input`
   width: 100%;
-  padding: 0.5rem;
-  border: 1px solid ${colors.border};
-  border-radius: 4px;
-  font-family: inherit;
-  font-size: 0.95rem;
+  padding: var(--spacing-sm) 0;
+  border: none;
+  border-bottom: 1px solid var(--color-border);
+  background: transparent;
+  border-radius: 0;
+  transition: border-color var(--transition-fast);
+
+  &:focus {
+    outline: none;
+    border-bottom-color: var(--color-primary);
+  }
 `;
 
 export const SimulateButton = styled.button`
   display: block;
   width: 100%;
   max-width: 300px;
-  margin: 1.5rem auto 0;
+  margin: var(--spacing-lg) auto 0;
   padding: 0.75rem;
-  background: ${colors.primary};
-  color: #fff;
+  background: var(--color-primary);
+  color: var(--color-white);
   border: none;
-  border-radius: 50px;
-  font-size: 1rem;
-  font-weight: 600;
+  border-radius: var(--border-radius-full);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
   cursor: pointer;
 
   &:hover {
@@ -261,8 +278,8 @@ export const SimulateButton = styled.button`
 `;
 
 export const RequiredNote = styled.div`
-  font-size: 0.85rem;
-  color: ${colors.textLight};
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
   text-align: right;
-  margin-top: 0.5rem;
+  margin-top: var(--spacing-sm);
 `;

@@ -1,4 +1,3 @@
-// src/components/Assistance/AssistanceCard.jsx
 import PropTypes from 'prop-types';
 import { Card } from './Assistance.styles';
 

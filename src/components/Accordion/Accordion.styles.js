@@ -1,12 +1,10 @@
 import styled from 'styled-components';
 
 export const StyledAccordion = styled.div`
-  /* Estilos comunes */
   .toggle-text {
     display: none;
   }
 
-  /* Modificaciones para la variante "questions-accordion" */
   &.questions-accordion {
     .accordion-item {
       border: none;
@@ -17,18 +15,17 @@ export const StyledAccordion = styled.div`
       background: transparent;
       box-shadow: none;
       border-radius: 0;
-      padding: 1rem 0;
-      font-size: 1.25rem;
+      padding: var(--spacing-md) 0;
+      font-size: var(--font-size-xl);
       color: var(--color-text-dark);
 
       &::after {
         display: inline-block;
         color: var(--color-price-bg);
-        font-size: 1rem;
+        font-size: var(--font-size-md);
       }
     }
 
-    /* fuerza el display none en el toggle-text aunque venga de otro lugar */
     .toggle-text {
       display: none !important;
     }

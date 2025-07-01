@@ -1,34 +1,30 @@
 import styled from 'styled-components';
 
-/* Contenedor de toda la sección */
 export const Section = styled.section`
-  padding: 0 1rem;
-  margin: 4rem 0;
+  padding: 0 var(--spacing-md);
+  margin: var(--spacing-3xl) 0;
 
   .container {
-    max-width: 1200px;
+    max-width: var(--container-max-width);
     margin: 0 auto;
     text-align: center;
   }
 `;
 
-/* Título de la sección */
 export const Title = styled.h2`
   font-family: 'Montserrat', sans-serif;
-  font-size: 2.5rem;
-  font-weight: 600;
+  font-size: var(--font-size-5xl);
+  font-weight: var(--font-weight-semibold);
   color: var(--color-text-dark);
-  margin-bottom: 2rem;
-  margin-top:5rem;
+  margin-bottom: var(--spacing-xl);
+  margin-top: 5rem;
 `;
 
-/* Grid de las tarjetas */
 export const Grid = styled.div`
   display: grid;
-  /* Cuatro columnas fijas de 220px centradas */
   grid-template-columns: repeat(4, 220px);
   justify-content: center;
-  gap: 1.5rem;
+  gap: var(--spacing-lg);
 
   @media (max-width: 992px) {
     grid-template-columns: repeat(2, 220px);
@@ -38,13 +34,12 @@ export const Grid = styled.div`
   }
 `;
 
-/* Tarjeta individual */
 export const Card = styled.div`
   width: 220px;
   height: 260px;
-  background: #fff;
+  background: var(--color-white);
   border: 2px solid var(--color-primary);
-  border-radius: 16px;
+  border-radius: var(--border-radius-md);
   overflow: hidden;
 
   display: flex;
@@ -52,7 +47,6 @@ export const Card = styled.div`
   font-family: 'Montserrat', sans-serif;
 `;
 
-/* Wrapper del icono */
 export const IconWrapper = styled.div`
   flex: 0 0 auto;
   height: 160px; /* altura de la zona blanca */
@@ -61,27 +55,26 @@ export const IconWrapper = styled.div`
   justify-content: center;
 
   img {
-    width: 64px;
-    height: 64px;
+    width: 140px;
+    height: 120px;
     object-fit: contain;
   }
 `;
 
-/* Wrapper del texto */
 export const TextWrapper = styled.div`
   flex: 1;
   background: var(--color-card-sub);
-  padding: 0.75rem 1rem;
-  color: #fff;
+  padding: 0.75rem var(--spacing-md);
+  color: var(--color-white);
 
   h4 {
     margin: 0;
-    font-size: 1.1rem;
-    font-weight: 600;
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
     line-height: 1.2;
   }
   p {
-    margin: 0.25rem 0 0;
-    font-size: 0.95rem;
+    margin: var(--spacing-xs) 0 0;
+    font-size: var(--font-size-base);
   }
 `;

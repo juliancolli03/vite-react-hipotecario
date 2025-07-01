@@ -1,39 +1,39 @@
-// src/components/Assistance/Assistance.styles.js
 import styled from 'styled-components';
 
 export const Section = styled.section`
-  padding: 0 1rem;
-  margin-bottom: 3rem;
+  padding: 0 var(--spacing-md);
+  margin-bottom: var(--spacing-2xl);
 
   .container {
-    max-width: 1200px;
+    max-width: var(--container-max-width);
     margin: 0 auto;
   }
 `;
 
 export const HighlightsRow = styled.div`
   display: flex;
-  gap: 1rem;
-  margin-bottom: 2rem;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
 
   @media (max-width: 768px) {
     flex-direction: column;
   }
 `;
+
 export const HighlightCard = styled.div.withConfig({
   shouldForwardProp: prop => !['bgColor', 'textColor'].includes(prop)
 })`
   flex: 1;
   background-color: ${({ bgColor }) => bgColor};
   color: ${({ textColor }) => textColor};
-  border-radius: 16px;
-  padding: 1.5rem;
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-lg);
   font-family: 'Montserrat', sans-serif;
 
   .highlight-inner {
     display: flex;
     align-items: flex-start;
-    gap: 1rem;
+    gap: var(--spacing-md);
   }
 
   .highlight-icon {
@@ -41,15 +41,8 @@ export const HighlightCard = styled.div.withConfig({
     height: 48px;
   }
 
-  .highlight-content {
+  .highlight-text {
     flex: 1;
-
-    h4 {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin: 0 0 0.5rem;
-    }
-
     p {
       margin: 0;
       font-size: 0.9rem;
@@ -59,38 +52,40 @@ export const HighlightCard = styled.div.withConfig({
     ul {
       list-style: none;
       padding: 0;
+      margin: 0;
+    }
 
-      li {
-        margin: 0.3rem 0;
-        font-size: 1rem;
-      }
+    ul li {
+      margin: 0.3rem 0;
+      font-size: var(--font-size-md);
     }
   }
 `;
+
 export const ServicesContainer = styled.div`
-  background-color: var(--color-card-sub-new); /* o '#00B2D4' */
-  border-radius: 16px;
-  padding: 2rem 1rem;
-  color: #fff;
+  background-color: var(--color-card-sub-new);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-xl) var(--spacing-md);
+  color: var(--color-white);
   font-family: 'Montserrat', sans-serif;
 `;
 
 export const ServicesTitle = styled.h2`
-  font-size: 2rem;
-  font-weight: 600;
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-semibold);
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: var(--spacing-md);
 `;
 
 export const ServicesLine = styled.hr`
   border: 1px solid rgba(255, 255, 255, 0.5);
-  margin-bottom: 2rem;
+  margin-bottom: var(--spacing-xl);
 `;
 
 export const ServiceGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: var(--spacing-xl);
 
   @media (max-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
@@ -103,7 +98,7 @@ export const ServiceGrid = styled.div`
 export const ServiceItem = styled.div`
   display: flex;
   align-items: flex-start;
-  gap: 1rem;
+  gap: var(--spacing-md);
   text-align: left;
 
   img {
@@ -112,38 +107,37 @@ export const ServiceItem = styled.div`
 
   .text {
     h4 {
-      margin: 0 0 0.25rem;
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: #fff;
+      margin: 0 0 var(--spacing-xs);
+      font-size: var(--font-size-lg);
+      font-weight: var(--font-weight-semibold);
+      color: var(--color-white);
     }
     p {
       margin: 0;
       font-size: 0.9rem;
       line-height: 1.4;
-      color: #fff;
+      color: var(--color-white);
     }
   }
 `;
 
-/* Aquí integramos el estilo de tu tarjeta */
 export const Card = styled.div`
-  border-radius: 16px;
-  padding: 1.5rem;
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-lg);
   text-align: center;
-  color: #fff;
+  color: var(--color-white);
   font-family: 'Montserrat', sans-serif;
 
   img {
     width: 48px;
     height: 48px;
-    margin-bottom: 1rem;
+    margin-bottom: var(--spacing-md);
   }
 
   h4 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin: 0 0 0.5rem;
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    margin: 0 0 var(--spacing-sm);
   }
 
   p {

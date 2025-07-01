@@ -7,25 +7,36 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import DropdownMenu from './DropdownMenu';
 
-const NavItem = ({ item }) => (
-  <NavItemStyled>
-    <NavLinkStyled
-      href="#"
-      isButton={item.isButton}
-      outlined={item.outlined}
-    >
-      {item.title}
-      {item.icon === 'user' && <FontAwesomeIcon icon={faUser} />}
-      {item.icon === 'chevron-right' && <FontAwesomeIcon icon={faChevronRight} />}
-      {item.hasSubmenu && (
-        <FontAwesomeIcon
-          icon={faChevronDown}
-          style={{ marginLeft: '0.25rem', fontSize: '0.8rem' }}
-        />
-      )}
-    </NavLinkStyled>
-    {item.hasSubmenu && <DropdownMenu submenu={item.submenu} />}
-  </NavItemStyled>
-);
+const iconMap = {
+  user: faUser,
+  'chevron-right': faChevronRight
+};
 
-export default NavItem;
+export default function NavItem({ item }) {
+  const outlined = item.isButton && item.icon === 'chevron-right';
+
+  return (
+    <NavItemStyled>
+      <NavLinkStyled
+        href="#"
+        isButton={item.isButton}
+        hasSubmenu={item.hasSubmenu}
+        outlined={outlined}
+      >
+        {item.title}
+        {item.icon && (
+          <FontAwesomeIcon
+            icon={iconMap[item.icon]}
+          />
+        )}
+        {item.hasSubmenu && (
+          <FontAwesomeIcon
+            icon={faChevronDown}
+            style={{ marginLeft: '0.25rem', fontSize: '0.8rem' }}
+          />
+        )}
+      </NavLinkStyled>
+      {item.hasSubmenu && <DropdownMenu submenu={item.submenu} />}
+    </NavItemStyled>
+  );
+}

@@ -6,6 +6,7 @@ import AdvantageSection from "./components/Advantages/AdvantagesSection";
 import AssistanceExtra from "./components/AssistanceExtra/AssistanceExtra";
 import QuestionSection from "./components/Questions/QuestionSection";
 import Footer from "./components/Footer/Footer";
+import WhatsAppButton from "./components/WhatsappButton/WhatsappButton";
 function App() {
 
   return (
@@ -19,6 +20,7 @@ function App() {
     <AssistanceExtra />
     <QuestionSection />
     <Footer/>
+      <WhatsAppButton />
     </>
   )
 }
